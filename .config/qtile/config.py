@@ -214,6 +214,7 @@ screens = [
                     this_current_screen_border = "#81A1C1", 
                     urgent_alert_method = "line", 
                     urgent_border = "#BF616A",
+                    disable_drag = True,
                     decorations = [
                         BorderDecoration(
                             border_width = [0,0,2,0],
@@ -330,6 +331,7 @@ screens = [
                 widget.CPU(
                     foreground = "#BF616A",
                     format = ' {load_percent}%',
+                    mouse_callbacks = {"Button1": lambda: qtile.spawn("alacritty -e htop")},
                     decorations = [
                         BorderDecoration(
                             border_width = [0,0,2,0],
@@ -347,6 +349,7 @@ screens = [
                 widget.Memory(
                     foreground = "#B48EAD",
                     format = '{MemUsed:.0f}{mm}/{MemTotal:.0f}{mm}',
+                    mouse_callbacks = {"Button1": lambda: qtile.spawn("alacritty -e btop")},
                     decorations = [
                         BorderDecoration(
                             border_width = [0,0,2,0],
